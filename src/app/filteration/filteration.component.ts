@@ -55,7 +55,7 @@ export class FilterationComponent implements OnInit {
     this.flagUrl = SearchCountry.flags.png;
     this.placeUrl = SearchCountry.coatOfArms.png;
     this.Continent = SearchCountry.continents[0];
-    this.Currency = SearchCountry.currencies[Object.keys(SearchCountry.currencies)[0]];
+    this.Currency = SearchCountry.currencies[Object.keys(SearchCountry.currencies)[0]].name + ' ' +SearchCountry.currencies[Object.keys(SearchCountry.currencies)[0]]?.symbol;
     this.Area = SearchCountry.area;
     this.Population = SearchCountry.population;
     this.Language = SearchCountry.languages[Object.keys(SearchCountry.languages)[0]];

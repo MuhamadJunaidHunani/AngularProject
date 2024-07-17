@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrolling Headline</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    .marquee {
+      display: flex;
+      overflow: hidden;
+      width: 100%;
+      background: #000;
+      color: #fff;
+      padding: 10px 0;
+    }
+
+    .marquee-content {
+      display: flex;
+      white-space: nowrap;
+      animation: marquee 15s linear infinite;
+    }
+
+    .marquee-content span {
+      display: inline-block;
+      padding: 0 2rem;
+    }
+
+    @keyframes marquee {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-50%);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="marquee">
+    <div class="marquee-content">
+      <span>This is a continuously scrolling headline lsjndjd kjnkjq kjkjs kjkjdb kjkjdbb kjbdkjb kjdc.</span>
+      <span>This is a continuously scrolling headline lsjndjd kjnkjq kjkjs kjkjdb kjkjdbb kjbdkjb kjdc.</span>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const marqueeContent = document.querySelector('.marquee-content');
+      const marqueeSpans = marqueeContent.querySelectorAll('span');
+
+      // Duplicate the content to create a seamless effect
+      const content = Array.from(marqueeSpans).map(span => span.outerHTML).join('');
+      marqueeContent.innerHTML = content + content;
+    });
+  </script>
+</body>
+</html>
