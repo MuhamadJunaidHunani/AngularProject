@@ -1,0 +1,31 @@
+<!-- <div>
+  <h1>Weather App</h1>
+  <form (ngSubmit)="generateWeather()">
+    <input
+      type="text"
+      #inputElement
+      (input)="searchCountries(inputElement.value)"
+      placeholder="Search countries..."
+    />
+    <ul *ngIf="searchResults.length > 0">
+      <li *ngFor="let result of searchResults" (click)="onSelectResult(result)">
+        {{ result.cities }}
+      </li>
+    </ul>
+    <button type="submit">Get Weather</button>
+  </form>
+  <div *ngIf="Weather">
+    <h2>
+      Weather in
+      <span class="Data"> {{ city }}, {{ Weather.sys.country}}</span>
+    </h2>
+    <p>
+      Temperature:<span class="Data">{{ Weather.main.temp}}°C</span>
+    </p>
+    <p>
+      Description:<span class="Data">
+        {{ Weather.weather[0].description }}</span
+      >
+    </p>
+  </div>
+</div> -->

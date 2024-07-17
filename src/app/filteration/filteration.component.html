@@ -1,0 +1,36 @@
+<div class="filterMainCont">
+    <div class="inputContainer">
+        <input 
+        type="text" 
+        id="FilterInp"
+        autocomplete="off"
+        #filterVal
+        (input)="filterNames(filterVal.value)"
+        placeholder="Search Countries..."
+        [(ngModel)]="inputValue"
+        >
+    </div>
+    <div class="FilterText" *ngIf="filterVal.value && isVisible">
+        <ul class="list" *ngIf="result.length !== 0; else elseBlock">
+            <li class="listItem" (click)="onSelect(country)" *ngFor="let country of result">{{country.name.common}}</li>
+        </ul>
+        <ng-template #elseBlock>
+            <p class="falsetext">Not Found...</p>
+          </ng-template>
+    </div>
+    <div class="DataCont" *ngIf="DataVisible">
+    <div class="image">
+        <img [src]="flagUrl">
+        <img [src]="placeUrl">
+    </div>
+    <div class="data">
+        <h1>Population: {{Population}}</h1>        
+        <h1>Language: {{Language}}</h1>        
+        <h1>Timezone: {{Timezone}}</h1>        
+        <h1>Capital: {{Capital}}</h1>        
+        <h1>Area: {{Area}}</h1>        
+        <h1>Currency: {{Area}}</h1>        
+        <h1>Continent: {{Continent}}</h1>              
+    </div>
+</div>
+</div>

@@ -1,0 +1,22 @@
+<h1>grand-parent.component.html</h1>
+<div>
+  <label>Email:</label>
+  <input [(ngModel)]="grandParentForm.email" key="email" /><br /><br />
+  <label>Password:</label>
+  <input [(ngModel)]="grandParentForm.password" type="password" /><br /><br />
+  <button (click)="grandParentformsubmit(grandParentForm.email, 'email')">
+    Submit
+  </button>
+</div>
+<app-parent
+  [parentForm]="parentForm"
+  (parentSubmit)="Parentformsubmit('hjkl', 'email')"
+></app-parent>
+<app-child
+  [childForm]="childForm"
+  (childSubmit)="childformsubmit('asdff', 'email')"
+></app-child>
+<app-grand-child
+  [grandchildForm]="grandChildForm"
+  (grandChilSubmit)="grandchildformsubmit('asd', 'email')"
+></app-grand-child>
